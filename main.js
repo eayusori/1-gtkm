@@ -42,3 +42,47 @@ function updateTime() {
 
 setInterval(updateTime, 1000);
 updateTime();
+
+let cursor = document.querySelector('.cursor');
+document.addEventListener('mousemove', moveCursor);
+
+function moveCursor(e){
+  let x = e.clientX;
+  let y = e.clientY;
+
+  cursor.style.left = `${x}px`;
+  cursor.style.top = `${y}px`;
+
+}
+
+const item = document.querySelector(".bouncingItem");
+
+let x = 20;
+let y = 20;
+
+let xspeed = 2;
+let yspeed = 1;
+
+function bounceAnimation() {
+  const w = item.offsetWidth;
+  const h = item.offsetHeight;
+
+  x += xspeed;
+  y += yspeed;
+
+  if (x <= 0 || x >= window.innerWidth - w) {
+    xspeed *= -1;
+  }
+
+  if (y <= 0 || y >= window.innerHeight - h) {
+    yspeed *= -1;
+  }
+
+  item.style.transform = `translate(${x}px, ${y}px)`;
+  requestAnimationFrame(bounceAnimation);
+}
+
+setTimeout(() => {
+  item.classList.add('active');
+  bounceAnimation();
+}, 5000);
