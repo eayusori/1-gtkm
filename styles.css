@@ -1,10 +1,13 @@
-:root { --gap: 2rem; }
+:root {
+    --gap: 2rem;
+}
 
-*{
+* {
     cursor: none;
 }
 
-html, body {
+html,
+body {
     background: white;
     overflow-x: hidden;
     overflow-y: auto;
@@ -22,8 +25,10 @@ main {
 }
 
 .cursor {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
+    left: -10px;
+    top: -10px;
     background: #fff;
     mix-blend-mode: difference;
     border-radius: 50%;
@@ -33,7 +38,7 @@ main {
     z-index: 999999;
 }
 
-.bouncingItem{
+.bouncingImg {
     display: block;
     width: 6rem;
     height: 6rem;
@@ -46,8 +51,8 @@ main {
     transition: opacity 1s ease;
 }
 
-.bouncingItem.active {
-  opacity: 1;
+.bouncingImg.active {
+    opacity: 1;
 }
 
 .timeContainer {
@@ -58,7 +63,7 @@ main {
 .clock {
     display: flex;
     white-space: nowrap;
-    animation: slide 10s linear infinite;
+    animation: slide 15s linear infinite;
     animation-direction: reverse;
     --from: 100vw;
     --to: -20vw;
@@ -66,22 +71,6 @@ main {
 
 .clock h4 {
     padding-right: var(--gap);
-}
-
-h1 {
-    margin: 0;
-    font-family:"doto"; 
-    color: black; 
-    font-size: 3rem; 
-    font-weight: 300;
-}
-
-h2 {
-    margin: 0;
-    font-family:"roboto mono"; 
-    color: black; 
-    font-size: 2rem; 
-    font-weight: 700; 
 }
 
 .subHeadingOffset {
@@ -96,38 +85,55 @@ h2 {
 }
 
 .about .cv-button {
-  font-family: "Roboto Mono";
-  font-size: 1rem;
-  font-weight: 200;
-  background: none;
-  border: none;
-  transition: font-weight 0.15s ease;
+    font-family: "Roboto Mono";
+    font-size: 1rem;
+    font-weight: 200;
+    background: none;
+    border: none;
+    transition: font-weight 0.15s ease;
 }
+
 .about .cv-button:hover {
-  font-weight: 900;
+    font-weight: 900;
+}
+
+h1 {
+    margin: 0;
+    font-family: "doto";
+    color: black;
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+h2 {
+    margin: 0;
+    font-family: "roboto mono";
+    color: black;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 h3 {
-    font-family:"roboto mono"; 
-    color: gray; 
-    font-size: 1rem; 
-    font-weight: 300; 
+    font-family: "roboto mono";
+    color: gray;
+    font-size: 1rem;
+    font-weight: 300;
     margin: 0;
 }
 
 h4 {
     margin: 0;
-    font-family:"doto"; 
-    color: black; 
-    font-size: 1rem; 
-    font-weight: 300; 
+    font-family: "doto";
+    color: black;
+    font-size: 1rem;
+    font-weight: 300;
 }
 
 header {
     display: flex;
     width: max-content;
     white-space: nowrap;
-    animation: slide 15s linear infinite;
+    animation: slide 20s linear infinite;
     --from: 0;
     --to: -50%;
 }
@@ -139,8 +145,13 @@ header {
 }
 
 @keyframes slide {
-    from { transform: translateX(var(--from)); }
-    to   { transform: translateX(var(--to)); }
+    from {
+        transform: translateX(var(--from));
+    }
+
+    to {
+        transform: translateX(var(--to));
+    }
 }
 
 .navContainer {
@@ -165,9 +176,8 @@ header {
     font-weight: 700;
 }
 
-.navContainer button.active{
-    font-weight: 700;
-    color: blue;
+.navContainer button.active {
+    font-weight: 900;
 }
 
 .navContainer button.active:hover {
@@ -175,40 +185,50 @@ header {
 }
 
 .workContainer {
-    width: 95%;
+    width: 80%;
     margin: 0 auto;
-    margin-top: 2rem;      
-    margin-bottom: 2rem;   
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    grid-template-rows: auto auto auto auto auto;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(5, auto);
     row-gap: 8rem;
     justify-content: space-between;
 }
 
 .workContainer button {
-    font-family: "roboto mono";
-    color: gray;
-    font-size: 1rem;
-    font-weight: 200;
     background: none;
     border: none;
-    transition: font-weight 0.3s ease;
-}
-
-.workContainer button:hover {
-    font-size: 1.2rem;
-    font-weight: 500;
-}
-
-body {
-    font-family: 'Franklin Gothic Medium', 'Arial', Arial, sans-serif;
-}
-th{
+    width: 100%;
     text-align: center;
 }
-td {
-    text-align: center;
+
+.workContainer button h3 {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.workContainer button h3::after {
+    content: attr(data-hover);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 0;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: 400;
+    transition: 0.5s;
+}
+
+.workContainer button:hover h3 {
+    color: transparent;
+}
+
+.workContainer button:hover h3::after {
+    opacity: 1;
+    color: gray;
 }
 
 footer {
@@ -225,7 +245,7 @@ footer {
     margin: 0;
     display: flex;
     white-space: nowrap;
-    animation: slide 11s linear infinite;
+    animation: slide 20s linear infinite;
     animation-direction: reverse;
     --from: 100vw;
     --to: -60vw;
@@ -257,4 +277,43 @@ footer {
     font-weight: 600;
 }
 
+/* ABOUT PAGE SPECIFICS */
 
+.aboutContainer {
+    width: 97%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    row-gap: 8rem;
+
+    border: solid 2px black;
+}
+
+.aboutItem,
+.aboutItemMerged {
+    background-color: lightseagreen;
+    border: 1px solid coral;
+    padding: 20px;
+    text-align: left;
+}
+
+.aboutItemMerged {
+    grid-column: span 2;
+    background-color: #b94444;
+}
+
+.aboutContainer>div {
+    border: 1px solid black;
+}
+
+.aboutImg {
+    display: block;
+    width: 6rem;
+    height: 6rem;
+    object-fit: contain;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}

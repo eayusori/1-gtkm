@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,68 +13,80 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script src="p5js.js" defer></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
-<script src="main.js" defer></script>
 </head>
+
 <body>
     <main>
-     <div class="cursor"></div>
-    <div class="timeContainer"> 
-      <div class="clock"> 
-        <h4>
-            <span class="date"></span>
-            &nbsp;|&nbsp; 
-            <span class="hrs">00</span>
-            <span>:</span>
-            <span class="min">00</span>
-            <span>:</span>
-            <span class="sec">00</span>
-            <span class="ampm">AM</span>
-        </h4>
-      </div>
-    </div>
-    <header> 
-        <h1 class="animatedHeader"> EDUARDO AYUSO RIZZO | ED | EAYUSORI@RISD.EDU | @IAMAYUSO__ | AYUSORIZZOE.COM |&nbsp; </h1> 
-        <h1 class="animatedHeader"> EDUARDO AYUSO RIZZO | ED | EAYUSORI@RISD.EDU | @IAMAYUSO__ | AYUSORIZZOE.COM |&nbsp;  </h1> 
-    </header>   
-    <div class="navContainer"> 
-        <button type="button" class="active" aria-current="page">About</button>
-        <a href="index.html"><button type="button">Work</button></a>
-        <button type="button">Exhibitions</button>
-        <button type="button">Contact</button>
-    </div>
-<div class="subHeadingOffset">
-  <h2>Hi, I'm Ed</h2>
-  &nbsp;
-  </div>
-<div class="about">
-    <h3>
-    <p>I’m currently based in Providence, Rhode Island, pursuing a Master’s in Industrial Design at the Rhode Island School of Design, after completing a Bachelor’s in Creative Media from City University of Hong Kong. My background is mixed, and so is my practice, which sits somewhere between art and design.
-    <br>
-    <br>
-    I’m drawn to political and social questions, to how systems shape people, and how design might challenge those systems instead of serving them. I don’t work in a fixed medium, and my practice spans product, graphic, systems, and concept design, often leaning toward the critical or speculative.
-    <br>
-    <br>    
-    I’m also pursuing a side career as a tattoo artist. </p>
-    <br>
-    <br>  
-    </h3>
-    <a href="cv_Mock.pdf" class="cv-button" target="_blank">CV</a>
-</div>
+        <div class="cursor"></div>
+        <div class="timeContainer">
+            <div class="clock">
+                <h4>
+                    <span class="date"></span>
+                    &nbsp;|&nbsp;
+                    <span class="hrs">00</span>
+                    <span>:</span>
+                    <span class="min">00</span>
+                    <span>:</span>
+                    <span class="sec">00</span>
+                    <span class="ampm">AM</span>
+                </h4>
+            </div>
+        </div>
+        <header>
+            <h1 class="animatedHeader"> EDUARDO AYUSO RIZZO | ED | EAYUSORI@RISD.EDU | @IAMAYUSO__ | AYUSORIZZOE.COM
+                |&nbsp; </h1>
+            <h1 class="animatedHeader"> EDUARDO AYUSO RIZZO | ED | EAYUSORI@RISD.EDU | @IAMAYUSO__ | AYUSORIZZOE.COM
+                |&nbsp; </h1>
+        </header>
+        <div class="navContainer">
+            <button type="button" class="active" aria-current="page">About</button>
+            <a href="index.html"><button type="button">Work</button></a>
+            <button type="button">Exhibitions</button>
+            <button type="button">Contact</button>
+        </div>
+        <div class="subHeadingOffset">
+            <div class="aboutContainer">
+                <div class="aboutItemMerged">
+                    <h2>Hi, I'm Ed</h2>
+                    <br>
+                    <br>
+                    <h3>Based in Providence, Rhode Island, I am pursuing a Master’s in Industrial Design at the Rhode
+                        Island School of Design. I previously studied Creative Media at the City University of Hong
+                        Kong, and my practice reflects this hybrid background, sitting between art and design.</h3>
+                    <br>
+                    <br>
+                    <h3>
+                        I’m drawn to political and social questions, to how systems shape people, and how design might
+                        challenge those systems rather than simply reinforce them. I don’t work within a fixed medium;
+                        my
+                        practice spans product, graphic, systems, and concept design, often leaning toward the critical
+                        or speculative.
+                    </h3>
+                    <br>
+                    <br>
+                    <a href="files/cv_Mock.pdf" class="cv-button" target="_blank">CV</a>
+                </div>
+                <div class="aboutItem">3</div>
+                <div class="aboutItemMerged"><img class="aboutImg" src="images/ed.jpg"></div>
+            </div>
+        </div>
     </main>
-     <footer>
+    <footer>
         <div class="staticFooter">
             <div class="staticFooterContent">
                 <button type="button">LinkedIn</button> |
                 <button type="button">Donate to…</button>
             </div>
         </div>
-        <h4 class="animatedFooter"> Copyright  © 2026. All rights reserved. </h4>
+        <h4 class="animatedFooter"> Copyright © 2026. All rights reserved. </h4>
     </footer>
 </body>
+
 </html>

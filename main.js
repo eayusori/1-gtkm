@@ -2,35 +2,35 @@ function updateTime() {
   const now = new Date();
 
   let h = now.getHours();
-    let ampm = h >= 12 ? "PM" : "AM";
+  let ampm = h >= 12 ? "PM" : "AM";
   let m = now.getMinutes();
   let s = now.getSeconds();
 
-    h = h % 12;
-    if (h === 0) {
+  h = h % 12;
+  if (h === 0) {
     h = 12;
-    }
+  }
 
-    if (h < 10) {
+  if (h < 10) {
     h = "0" + h;
-    } else {
+  } else {
     h = "" + h;
-    }
+  }
 
-    if (m < 10) {
-        m = "0" + m;
-    } else {
-        m = "" + m;
-    }
+  if (m < 10) {
+    m = "0" + m;
+  } else {
+    m = "" + m;
+  }
 
-    if (s < 10) {
-        s = "0" + s;
-    } else {
-        s = "" + s;
-    } 
+  if (s < 10) {
+    s = "0" + s;
+  } else {
+    s = "" + s;
+  }
 
-  const days = ["SUN","MON","TUE","WED","THU","FRI","SAT"];
-  const months = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+  const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
   const dateStr = `${days[now.getDay()]} ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
 
   document.querySelectorAll(".hrs").forEach(el => el.textContent = h);
@@ -40,13 +40,15 @@ function updateTime() {
   document.querySelectorAll(".date").forEach(el => el.textContent = dateStr);
 }
 
+//cursor
+
 setInterval(updateTime, 1000);
 updateTime();
 
 let cursor = document.querySelector('.cursor');
 document.addEventListener('mousemove', moveCursor);
 
-function moveCursor(e){
+function moveCursor(e) {
   let x = e.clientX;
   let y = e.clientY;
 
@@ -55,12 +57,14 @@ function moveCursor(e){
 
 }
 
-const item = document.querySelector(".bouncingItem");
+//bouncing cow
+
+const item = document.querySelector(".bouncingImg");
 
 let x = 20;
 let y = 20;
 
-let xspeed = 2;
+let xspeed = 1.5;
 let yspeed = 1;
 
 function bounceAnimation() {
